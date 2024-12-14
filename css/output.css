@@ -554,11 +554,15 @@ video {
   display: none;
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+.bg-mario-pattern {
+  background-image: url('/media/bg/pagePattern.jpg');
 }
 
-.font-serif {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+.font-custom {
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
