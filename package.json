@@ -1,0 +1,12 @@
+{
+  "name": "projeto-jogo_da_memoria",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "dev": "npx tailwindcss -o ./css/output.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
