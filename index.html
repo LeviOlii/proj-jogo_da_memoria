@@ -10,7 +10,16 @@
         <link rel="stylesheet" href="./css/output.css">
         <title>Jogo da Memória</title>
     </head>
-    <body class="bg-mario-pattern text-white">
-        <h1 class="font-custom">OII tudo bem</h1>
+    <body class="bg-mario-pattern text-white font-custom">
+
+        <!--Tela inicial-->
+        <div class="mx-8 sm:mx-16 md:mx-28 my-20 sm:my-24 md:my-40 "> <!--Div só pra imagem de fundo do cenário do Mário-->
+            <div id="tela-inicial" class="flex flex-col justify-center items-center h-screen min-h-screen bg-mario-background-mobile gap-20 md:bg-mario-background-desktop md:bg-center md:bg-cover rounded-3xl ">
+                <p id="game-title" class="text-3xl sm:text-4xl md:text-5xl text-center">Jogo<br>da<br>Memória</p>
+                <div class="bg-orange-500  rounded-3xl shadow-lg px-8 py-2 "> <!--Div só pra colocar borda preenchida-->
+                    <p id="start-button" class="text-base  sm:text-lg">START</p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
