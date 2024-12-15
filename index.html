@@ -6,10 +6,21 @@
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="js/script.js"></script>
+        <script src="js/script.js" defer></script>
         <link rel="stylesheet" href="./css/output.css">
         <title>Jogo da Memória</title>
     </head>
+    <body class="bg-mario-pattern text-white font-custom">
+
+        <!--Tela inicial-->
+        <div class="mx-8 sm:mx-16 md:mx-28 my-20 sm:my-24 md:my-40 "> <!--Div só pra imagem de fundo do cenário do Mário-->
+            <div id="menu" class="flex flex-col justify-center items-center h-screen min-h-screen bg-mario-background-mobile gap-20 md:bg-mario-background-desktop md:bg-center md:bg-cover rounded-3xl ">
+                <p id="game-title" class="text-3xl sm:text-4xl md:text-5xl text-center">Jogo<br>da<br>Memória</p>
+                <div class="bg-orange-500  rounded-3xl shadow-lg px-8 py-2 cursor-pointer"> <!--Div só pra colocar borda preenchida-->
+                    <p id="start-button" class="text-base  sm:text-lg">START</p>
+                </div>
+            </div>
+        </div>
     <body class="bg-mario-pattern text-white font-custom">
 
         <section id="containerCartas" class="grid grid-cols-6 gap-x-0 gap-y-1 justify-center m-32">
