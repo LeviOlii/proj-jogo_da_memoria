@@ -12,7 +12,7 @@ Tecnologias utilizadas:
 - Javascript
 
 Integrantes da equipe e suas respectivas funções:
-- Samuel dos Santos Oliveira:
+- Samuel dos Santos Oliveira: Lógica de programação
 - Levi Oliveira:
 - Maria Eduarda da Silva Alves: estilização, responsividade
 - Felipe Rocha Carvalho da Lima:
