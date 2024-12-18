@@ -2028,4 +2028,27 @@ video {
   .xl\:p-40 {
     padding: 10rem;
   }
+
+  @layer components {
+    .card-flip {
+        perspective: 1000px; /* Define um efeito 3D */
+    }
+
+    .card-inner {
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+    }
+
+    .card-flip.flip .card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .card-face {
+        backface-visibility: hidden;
+    }
+
+    .card-front {
+        transform: rotateY(180deg);
+    }
+  }
 }
