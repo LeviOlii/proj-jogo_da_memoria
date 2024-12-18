@@ -6,9 +6,30 @@ const restartButton = document.getElementById('restart-button');
 
 let flippedCards = [];
 let lockBoard = false;
-let matchedCards = 0; // Variável para contar as cartas combinadas
+let matchedCards = 0;
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function shuffleCards() {
+    const cardContainer = document.querySelector('.inline-grid');
+    const cards = Array.from(cardContainer.children);
+    
+    // Embaralhar as cartas
+    const shuffledCards = shuffle(cards);
+
+    // Remove todas as cartas do DOM e reanexa na nova ordem
+    cardContainer.innerHTML = '';
+    shuffledCards.forEach(card => cardContainer.appendChild(card));
+}
 
 startButton.addEventListener('click', () => {
+    shuffleCards(); // Embaralha as cartas antes de exibir
     menu.classList.add('hidden');
     cartas.classList.remove('hidden');
     cartas.classList.add('flex');
@@ -67,7 +88,6 @@ function handleCardClick() {
     // Placeholder para permitir que `removeEventListener` funcione corretamente
 }
 
-// Função para verificar vitória
 function checkVictory() {
     // Verifica se o número de cartas combinadas é igual ao número total de cartas
     const totalCards = document.querySelectorAll('.carta').length;
@@ -83,17 +103,16 @@ function showVictoryMessage() {
     victoryMessage.classList.add('visible');
 }
 
-// Lógica para reiniciar o jogo
 function restartGame() {
     const victoryMessage = document.getElementById('victory-message');
     victoryMessage.classList.remove('visible');
     victoryMessage.classList.add('hidden');
     resetGameState();
+    shuffleCards();
     matchedCards = 0; // Reseta as cartas combinadas
     console.log("Jogo reiniciado!");
 }
 
-// Função para resetar o estado do jogo
 function resetGameState() {
     // Reseta o estado do tabuleiro e do jogo
     document.querySelectorAll('.carta').forEach(card => {
