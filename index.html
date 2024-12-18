@@ -6,11 +6,145 @@
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="js/script.js"></script>
+        <script src="js/script.js" defer></script>
         <link rel="stylesheet" href="./css/output.css">
         <title>Jogo da Memória</title>
     </head>
-    <body class="bg-mario-pattern text-white">
-        <h1 class="font-custom">OII tudo bem</h1>
+    <body class="bg-mario-pattern text-white font-custom h-screen">
+
+        <!--Tela inicial-->
+        <div id="container-menu" class="mx-8 sm:mx-16 md:mx-28 my-20 sm:my-24 md:my-40 "> <!--Div só pra imagem de fundo do cenário do Mário-->
+            <div id="menu" class="flex flex-col justify-center items-center h-screen min-h-screen bg-mario-background-mobile gap-20 md:bg-mario-background-desktop md:bg-center md:bg-cover rounded-3xl ">
+                <p id="game-title" class="text-3xl sm:text-4xl md:text-5xl text-center">Jogo<br>da<br>Memória</p>
+                <div class="bg-orange-500  rounded-3xl shadow-lg px-8 py-2 cursor-pointer"> <!--Div só pra colocar borda preenchida-->
+                    <p id="start-button" class="text-base  sm:text-lg">START</p>
+                </div>
+            </div>
+        </div>
+
+        <!--Cartas-->
+        <section id="container-cartas" class="justify-center hidden h-screen"> <!--Centralizando as cartas-->
+            <div class="inline-grid grid-cols-4 place-items-center gap-y-4 gap-x-12 px-10 m-0 md:m-24 md:p-0 lg:grid-cols-6 lg:gap-y-8 lg:gap-x-10">
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24  relative lg:size-32">
+                    <img class="frontCard object-contain size-24 p-4 absolute lg:size-32" src="/media/cards/mario.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain size-24 p-4 absolute lg:size-32" src="/media/cards/luigi.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-4 mt-2 absolute lg:size-32 lg:pb-8" src="/media/cards/bloco.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-2 absolute lg:size-32" src="/media/cards/bowser.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-4 absolute lg:size-32" src="/media/cards/bowserjr.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-4 absolute py-6 lg:size-32" src="/media/cards/cogumelo.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-4 absolute py-6 lg:size-32" src="/media/cards/estrela.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-4 absolute py-6 lg:size-32" src="/media/cards/flor.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-4 mt-2 absolute lg:size-32 lg:pb-8" src="/media/cards/moeda.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-2 absolute lg:size-32" src="/media/cards/waluigi.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-2 absolute lg:size-32" src="/media/cards/wario.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+                
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-2 absolute mt-2 lg:size-32 lg:mt-0" src="/media/cards/yoshi.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">                   
+                </div>
+
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24  relative lg:size-32">
+                    <img class="frontCard object-contain size-24 p-4 absolute lg:size-32" src="/media/cards/mario.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain size-24 p-4 absolute lg:size-32" src="/media/cards/luigi.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-4 mt-2 absolute lg:size-32 lg:pb-8" src="/media/cards/bloco.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-2 absolute lg:size-32" src="/media/cards/bowser.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-4 absolute lg:size-32" src="/media/cards/bowserjr.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-4 absolute py-6 lg:size-32" src="/media/cards/cogumelo.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-4 absolute py-6 lg:size-32" src="/media/cards/estrela.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-4 absolute py-6 lg:size-32" src="/media/cards/flor.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-4 mt-2 absolute lg:size-32 lg:pb-8" src="/media/cards/moeda.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-2 absolute lg:size-32" src="/media/cards/waluigi.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+    
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-2 absolute lg:size-32" src="/media/cards/wario.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">    
+                </div>
+                
+                <div class="carta bg-[#2192BF] p-0 m-0 w-20 h-24 relative lg:size-32">
+                    <img class="frontCard object-contain p-2 absolute mt-2 lg:size-32 lg:mt-0" src="/media/cards/yoshi.png" alt="carta frontal">
+                    <img class="backCard object-cover absolute w-full h-full cursor-pointer" src="/media/cards/cardBack.png" alt="carta traseira">                    
+                </div>
+            </div>
+        </section>
     </body>
 </html>
