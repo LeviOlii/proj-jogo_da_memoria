@@ -15,5 +15,3 @@ Integrantes da equipe e suas respectivas funções:
 - Samuel dos Santos Oliveira: Lógica de programação
 - Levi Oliveira: Estrutura e estilização do menu principal, funcionalidade de esconder o menu após clicar em START
 - Maria Eduarda da Silva Alves: estilização, responsividade
-- Felipe Rocha Carvalho da Lima:
-- Carlos Jeferson Jacinto da Silva:
